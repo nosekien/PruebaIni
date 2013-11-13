@@ -1,0 +1,67 @@
+pwd ver donde estoy
+mkdir------crear la carpeta en el ordenador
+cd entrar en ella
+git init-----para usar la carpeta en lo que estes de repositorio local.
+git clone url(repositorio github)------para descargar todo lo del github a tu repositorio del ordenador.SÓLO SE HACE LA PRIMERA VER, LUEGO PULL.
+git add nombre del archivo-------------para añadir el archivo para subirlo.
+git commit -m"mensaje"-----------------para poner la copia en tu repositorio local
+git push-------------------------------para subirlo
+
+
+package aleatorios;
+import leer.*;
+public class Aleatorios_Prueba {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int dimI=0, fila =0, num=0;
+		int dimJ=0;
+		System.out.println("Introduce el número filas");
+			dimI=Leer.datoInt();
+		System.out.println("Introduce el número columnas");
+			dimJ=Leer.datoInt();
+		int aleat[][]=new int [dimI][dimJ];
+		int maxi=25;
+		int mini=4;
+		int resulAl=0;
+		System.out.println("¿Cuál es el número desde el que quiere generar los elementos de la mariz?");
+			mini=Leer.datoInt();
+		System.out.println("¿Cuál es el número máximo que quiere generar?");
+			maxi=Leer.datoInt();
+		for (int i = 0; i < aleat.length; i++) {
+			for (int j = 0; j < aleat[i].length; j++) {
+				resulAl=(int) Math.floor(Math.random()*(maxi-mini+1)+mini);
+				aleat[i][j]= resulAl;
+				
+			}
+			
+		}
+		for (int l = 0; l < aleat.length; l++) {
+			System.out.println("\n");
+			for (int k = 0; k < aleat[l].length; k++) {
+				System.out.print(aleat[l][k]+"\t");
+			}
+		}
+		System.out.println("\n¿Qué fila quiere sustituir?");
+			fila = Leer.datoInt();
+		System.out.println("¿Por qué número quiere sustituir los elementos de fila?");
+			num=Leer.datoInt();
+		for (int i = 0; i<aleat.length; i++) {
+			if (i==(fila-1)){
+				for (int j = 0; j < aleat[i].length; j++) {
+				aleat[i][j]=num;
+			}
+							
+				
+			}
+		}
+		for (int l = 0; l < aleat.length; l++) {
+			System.out.println("\n");
+			for (int k = 0; k < aleat[l].length; k++) {
+				System.out.print(aleat[l][k]+"\t");
+			}
+		}
+
+	}
+
+}
